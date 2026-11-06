@@ -1,0 +1,280 @@
+/* ===== Colours stored in CSS variables (custom properties) ===== */
+:root {
+  --navy: #0f2a44;
+  --blue: #1f6feb;
+  --light: #f4f7fb;
+  --text: #1f2933;
+  --muted: #5b6b7a;
+  --white: #ffffff;
+  --radius: 12px;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Navigation menu (Flexbox) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navy);
+  padding: 14px 32px;
+  position: sticky;   /* menu stays at the top while scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #cfd8e3;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--white);
+  border-bottom-color: var(--blue);
+  text-decoration: none;
+}
+
+/* ===== Header / intro ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 24px;
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: var(--white);
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;    /* keeps the photo from stretching */
+  border-radius: 50%;
+  border: 5px solid var(--white);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.6rem;
+}
+
+.subtitle {
+  margin: 4px 0;
+  font-size: 1.25rem;
+}
+
+.level {
+  margin: 0 0 18px;
+  opacity: 0.85;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--navy);
+  font-weight: bold;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+/* ===== Content cards ===== */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 14px rgba(15, 42, 68, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--navy);
+  border-left: 5px solid var(--blue);
+  padding-left: 12px;
+}
+
+/* ===== Soft skills shown as "chips" ===== */
+.skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills li {
+  background-color: #e6efff;
+  color: var(--navy);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e3e8ef;
+}
+
+th {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;   /* zebra stripes */
+}
+
+tbody tr:hover {
+  background-color: #e6efff;
+}
+
+/* ===== Contact form ===== */
+.form-card h1 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+.form-intro {
+  color: var(--muted);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  padding: 11px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #c9d3df;
+  border-radius: 8px;
+  background-color: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.2);
+}
+
+form .btn {
+  margin-top: 20px;
+  align-self: flex-start;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.error {
+  color: #c62828;
+  font-weight: 600;
+  min-height: 1.2em;
+  margin: 12px 0 0;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive design for phones (media query) ===== */
+@media (max-width: 650px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+}
